@@ -28,10 +28,69 @@
   <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js" type="text/javascript"></script>
 </head>
 
-<body>
-  <h1>Tell what handsigns you're going!</h1>
-  <p></p>
-  <script src="/static/sketch.js"></script>
-</body>
+<h1 style="font-family: 'Futura PT';">HERE ARE THE HANDSIGNS TO TRY!</h1>
+<p style="font-family: 'Futura PT';">IT MIGHT TAKE A LITTLE SHIFTING TO GET CORRECT</p>
 
-</html>
+<div class="container mt-6">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3 style="font-family: 'Futura PT';">PEACE!</h3>
+      <img src="/static/peace%20sign.jpeg" class="rounded" alt="peace" width="400" height="400"/>
+    </div>
+
+    <div class="col-sm-4" >
+      <h3 style="font-family: 'Futura PT';">THUMBS UP!</h3>
+      <img src="/static/thumbs%20up.jpeg" class="rounded" alt="up" width="400" height="400"/>
+    </div>
+
+    <div class="col-sm-4">
+      <h3 style="font-family: 'Futura PT';">THUMBS DOWN!</h3>
+      <img src="/static/thumbs%20down.jpeg" class="rounded" alt="down" width="400" height="400"/>
+    </div>
+  </div>
+</div>
+
+ <style class="rounded" width="400" height="400">
+    #sadface {
+      display: none;
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 400px;
+    }
+    #happy {
+      display: none;
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 400px;
+    }
+
+    #peace {
+      display: none;
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 400px;
+    }
+  </style>
+
+  <div class="container-fluid p-5">
+    <h1 style="font-family: 'Futura PT';">HAND SIGNS</h1>
+    <p style="font-family: 'Futura PT';">(find out the images that pop up!)</p>
+    <div id="sketch-holder">
+      <img id="sadface" src="/static/sadface.jpeg" alt="Sad Face">
+      <img id="happy" src="/static/happy.jpeg" alt="Happy Face">
+      <img id="peace" src="/static/peace.jpeg" alt="Peace sign">
+    </div>
+    <script src="/static/sketch.js"></script>
+    <p style="font-family: 'Futura PT';">TRY IT YOURSELF!</p>
+  </div>
+
+  </html>

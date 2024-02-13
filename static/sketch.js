@@ -5,7 +5,7 @@
 
 /* ===
 ml5 Example
-Webcam Image Classification using a pre-trained customized model and p5.js
+Webcam Image Classification using a prthe-trained customized model and p5.js
 This example uses p5 preload function to create the classifier
 === */
 
@@ -26,15 +26,17 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(320, 260);
+  var canvas = createCanvas(640, 480);
+  canvas.parent('sketch-holder');
   // Create the video
   video = createCapture(VIDEO);
-  video.size(320, 240);
+  video.size(640, 480);
   video.hide();
 
   flippedVideo = ml5.flipImage(video)
   // Start classifying
   classifyVideo();
+
 }
 
 function draw() {
@@ -47,6 +49,30 @@ function draw() {
   textSize(16);
   textAlign(CENTER);
   text(label, width / 2, height - 4);
+
+  if (label === "thumbs down") {
+    let sadfaceImage = document.getElementById('sadface');
+    sadfaceImage.style.display = 'block';
+  } else {
+    let sadfaceImage = document.getElementById('sadface');
+    sadfaceImage.style.display = 'none';
+  }
+
+  if (label === "thumbs up") {
+    let sadfaceImage = document.getElementById('happy');
+    sadfaceImage.style.display = 'block';
+  } else {
+    let sadfaceImage = document.getElementById('happy');
+    sadfaceImage.style.display = 'none';
+  }
+
+  if (label === "peace") {
+    let sadfaceImage = document.getElementById('peace');
+    sadfaceImage.style.display = 'block';
+  } else {
+    let sadfaceImage = document.getElementById('peace');
+    sadfaceImage.style.display = 'none';
+  }
 }
 
 // Get a prediction for the current video frame
@@ -62,6 +88,7 @@ function gotResult(error, results) {
     console.error(error);
     return;
   }
+
   // The results are in an array ordered by confidence.
   // console.log(results[0]);
   label = results[0].label;
